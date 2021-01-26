@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          zkNodes: localhost:2181
+          brokers: localhost:9092
+          transaction:
+            producer:
+              partition-count: 1
+      bindings:
+        output:
+          destination: meetupTopic
+          contentType: application/json
+server:
+  port: 8081
